@@ -8,5 +8,15 @@ import java.util.Optional;
 public interface EmployeeFindingUseCase {
     Optional<Employee> findById();
     
+    Optional<Employee> findDepartmentManager();
+    
+    Optional<Employee> findManagerByEmployee();
+    
     List<Employee> findAll();
+    
+    List<Employee> findManagers();
+    
+    List<Employee> findByManager();
+    
+    List<Employee> findByDepartment();
 }
