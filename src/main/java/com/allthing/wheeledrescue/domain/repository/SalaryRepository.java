@@ -12,4 +12,6 @@ public interface SalaryRepository {
     List<Salary> findAll();
     
     Salary create(Salary entity) throws DatabaseEntityNotFoundException;
+    
+    Salary update(Salary entity) throws DatabaseEntityNotFoundException;
 }

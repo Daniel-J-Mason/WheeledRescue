@@ -12,4 +12,6 @@ public interface TitleRepository {
     List<Title> findAll();
     
     Title create(Title entity) throws DatabaseEntityNotFoundException;
+    
+    Title update(Title entity) throws DatabaseEntityNotFoundException;
 }

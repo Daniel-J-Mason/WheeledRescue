@@ -12,4 +12,6 @@ public interface DepartmentEmployeeRepository {
     List<DepartmentEmployee> findAll();
     
     DepartmentEmployee create(DepartmentEmployee entity) throws DatabaseEntityNotFoundException;
+    
+    DepartmentEmployee update(DepartmentEmployee entity) throws DatabaseEntityNotFoundException;
 }

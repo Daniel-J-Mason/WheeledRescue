@@ -12,4 +12,6 @@ public interface DepartmentManagerRepository {
     List<DepartmentManager> findAll();
     
     DepartmentManager create(DepartmentManager entity) throws DatabaseEntityNotFoundException;
+    
+    DepartmentManager update(DepartmentManager entity) throws DatabaseEntityNotFoundException;
 }
