@@ -1,5 +1,7 @@
 package com.allthing.wheeledrescue.domain.usecase;
 
 public interface HireEmployeeUseCase {
-    void CreateEmployeeWithSalaryAndDepartment();
+    void CreateDepartmentEmployeeWithSalary();
+    
+    void CreateDepartmentManagerWithSalary();
 }
