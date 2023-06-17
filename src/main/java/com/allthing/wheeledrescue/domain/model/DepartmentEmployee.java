@@ -1,7 +1,5 @@
 package com.allthing.wheeledrescue.domain.model;
 
-import com.allthing.wheeledrescue.domain.model.Department;
-import com.allthing.wheeledrescue.domain.model.Employee;
 import lombok.*;
 
 import java.time.LocalDate;

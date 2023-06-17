@@ -5,9 +5,10 @@ import com.allthing.wheeledrescue.util.exception.DatabaseEntityNotFoundException
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface EmployeeRepository {
-    Optional<Employee> findById();
+    Optional<Employee> findById(UUID id);
     
     List<Employee> findAllEmployees();
     

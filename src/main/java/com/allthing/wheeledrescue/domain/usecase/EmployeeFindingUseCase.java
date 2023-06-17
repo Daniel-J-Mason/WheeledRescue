@@ -4,9 +4,10 @@ import com.allthing.wheeledrescue.domain.model.Employee;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface EmployeeFindingUseCase {
-    Optional<Employee> findById();
+    Optional<Employee> findById(UUID id);
     
     Optional<Employee> findDepartmentManager();
     

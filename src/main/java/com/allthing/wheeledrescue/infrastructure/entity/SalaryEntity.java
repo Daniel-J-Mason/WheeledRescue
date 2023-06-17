@@ -1,4 +1,4 @@
-package com.allthing.wheeledrescue.domain.model;
+package com.allthing.wheeledrescue.infrastructure.entity;
 
 import lombok.*;
 
@@ -11,10 +11,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DepartmentManager {
+public class SalaryEntity {
     private UUID id;
-    private Employee employee;
-    private Department department;
+    private EmployeeEntity employeeEntity;
+    private Long hourlySalary;
     private LocalDate fromDate;
     private LocalDate toDate;
 }
