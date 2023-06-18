@@ -9,15 +9,19 @@ import java.util.UUID;
 public interface EmployeeFindingUseCase {
     Optional<Employee> findById(UUID id);
     
-    Optional<Employee> findDepartmentManager();
+    Optional<Employee> findByEmployeeNumber(Long number);
     
-    Optional<Employee> findManagerByEmployee();
+    Optional<Employee> findDepartmentManagerNumber(Long number);
+    
+    Optional<Employee> findManagerByEmployeeNumber(Long number);
     
     List<Employee> findAll();
     
     List<Employee> findManagers();
     
-    List<Employee> findByManager();
+    List<Employee> findByManagerNumber(Long number);
     
-    List<Employee> findByDepartment();
+    List<Employee> findByDepartmentNumber(Long number);
+    
+    List<Employee> findActiveEmployees();
 }

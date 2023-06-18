@@ -2,10 +2,8 @@ package com.allthing.wheeledrescue.application.usecase;
 
 import com.allthing.wheeledrescue.domain.model.Employee;
 import com.allthing.wheeledrescue.domain.repository.EmployeeRepository;
-import com.allthing.wheeledrescue.domain.service.EmployeeService;
 import com.allthing.wheeledrescue.domain.usecase.EmployeeFindingUseCase;
 import lombok.RequiredArgsConstructor;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -21,18 +19,23 @@ public class DefaultEmployeeFindingUseCase implements EmployeeFindingUseCase {
     }
     
     @Override
-    public Optional<Employee> findDepartmentManager() {
+    public Optional<Employee> findByEmployeeNumber(Long number) {
+        return employeeRepository.findByEmployeeNumber(number);
+    }
+    
+    @Override
+    public Optional<Employee> findDepartmentManagerNumber(Long number) {
         return Optional.empty();
     }
     
     @Override
-    public Optional<Employee> findManagerByEmployee() {
+    public Optional<Employee> findManagerByEmployeeNumber(Long number) {
         return Optional.empty();
     }
     
     @Override
     public List<Employee> findAll() {
-        return null;
+        return employeeRepository.findAll();
     }
     
     @Override
@@ -41,12 +44,17 @@ public class DefaultEmployeeFindingUseCase implements EmployeeFindingUseCase {
     }
     
     @Override
-    public List<Employee> findByManager() {
+    public List<Employee> findByManagerNumber(Long number) {
         return null;
     }
     
     @Override
-    public List<Employee> findByDepartment() {
+    public List<Employee> findByDepartmentNumber(Long number) {
         return null;
+    }
+    
+    @Override
+    public List<Employee> findActiveEmployees() {
+        return employeeRepository.findActiveEmployees();
     }
 }

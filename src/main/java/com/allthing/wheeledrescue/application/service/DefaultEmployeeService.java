@@ -5,7 +5,7 @@ import com.allthing.wheeledrescue.application.mappers.EmployeeResponseMapper;
 import com.allthing.wheeledrescue.domain.service.EmployeeService;
 import com.allthing.wheeledrescue.domain.usecase.EmployeeFindingUseCase;
 import lombok.RequiredArgsConstructor;
-
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -20,4 +20,26 @@ public class DefaultEmployeeService implements EmployeeService {
         return employeeFindingUseCase.findById(id)
                 .map(employeeResponseMapper::map);
     }
+    
+    @Override
+    public Optional<EmployeeResponse> findByEmployeeNumber(Long number) {
+        return employeeFindingUseCase.findByEmployeeNumber(number)
+                .map(employeeResponseMapper::map);
+    }
+    
+    @Override
+    public List<EmployeeResponse> findAll() {
+        return employeeFindingUseCase.findAll()
+                .stream().map(employeeResponseMapper::map)
+                .toList();
+    }
+    
+    @Override
+    public List<EmployeeResponse> findActiveEmployees() {
+        return employeeFindingUseCase.findActiveEmployees()
+                .stream().map(employeeResponseMapper::map)
+                .toList();
+    }
+    
+    
 }

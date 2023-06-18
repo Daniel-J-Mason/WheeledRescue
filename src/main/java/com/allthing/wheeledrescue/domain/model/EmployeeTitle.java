@@ -1,7 +1,5 @@
 package com.allthing.wheeledrescue.domain.model;
 
-import com.allthing.wheeledrescue.domain.model.util.Gender;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,13 +15,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Employee {
+public class EmployeeTitle {
     private UUID id;
-    private Long number;
-    private LocalDate birthDate;
-    private String firstName;
-    private String lastName;
-    private Gender gender;
-    private LocalDate hireDate;
-    private LocalDate leaveDate;
+    private Employee employee;
+    private Title title;
+    private LocalDate fromDate;
+    private LocalDate toDate;
 }

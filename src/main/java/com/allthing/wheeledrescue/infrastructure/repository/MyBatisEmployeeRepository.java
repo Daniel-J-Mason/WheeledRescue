@@ -6,7 +6,6 @@ import com.allthing.wheeledrescue.infrastructure.mappers.entity.EmployeeMapper;
 import com.allthing.wheeledrescue.infrastructure.mappers.mybatis.EmployeeEntityMapper;
 import com.allthing.wheeledrescue.util.exception.DatabaseEntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -24,8 +23,24 @@ public class MyBatisEmployeeRepository implements EmployeeRepository {
     }
     
     @Override
-    public List<Employee> findAllEmployees() {
-        return null;
+    public Optional<Employee> findByEmployeeNumber(Long number) {
+        System.out.println("Here");
+        return employeeEntityMapper.findByEmployeeNumber(number)
+                .map(employeeMapper::map);
+    }
+    
+    @Override
+    public List<Employee> findAll() {
+        return employeeEntityMapper.findAll()
+                .stream().map(employeeMapper::map)
+                .toList();
+    }
+    
+    @Override
+    public List<Employee> findActiveEmployees() {
+        return employeeEntityMapper.findActiveEmployees()
+                .stream().map(employeeMapper::map)
+                .toList();
     }
     
     @Override

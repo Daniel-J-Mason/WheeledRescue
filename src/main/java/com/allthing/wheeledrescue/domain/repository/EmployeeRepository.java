@@ -10,7 +10,11 @@ import java.util.UUID;
 public interface EmployeeRepository {
     Optional<Employee> findById(UUID id);
     
-    List<Employee> findAllEmployees();
+    Optional<Employee> findByEmployeeNumber(Long number);
+    
+    List<Employee> findAll();
+    
+    List<Employee> findActiveEmployees();
     
     Employee create(Employee entity) throws DatabaseEntityNotFoundException;
     

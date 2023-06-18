@@ -1,8 +1,11 @@
 package com.allthing.wheeledrescue.domain.model;
 
-import lombok.*;
-
-import java.time.LocalDate;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import java.util.UUID;
 
 @Getter
@@ -13,8 +16,6 @@ import java.util.UUID;
 @Builder
 public class Title {
     private UUID id;
-    private Employee employee;
     private String title;
-    private LocalDate fromDate;
-    private LocalDate toDate;
+    private Department belongsTo;
 }
